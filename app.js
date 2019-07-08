@@ -9,10 +9,6 @@ const config = require('./config/database');
 //Initialize our app variable
 const app = express();
 
-// controllers
-const pacientes = require('./controllers/pacientes');
-app.use('/pacientes', pacientes);
-
 //Port
 const port = 3000;
 
@@ -24,6 +20,10 @@ app.use(cors());
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
+
+// controllers
+const pacientes = require('./controllers/pacientes');
+app.use('/pacientes', pacientes);
 
 // de aca levantamos el front ya buildeado
 app.use(express.static(path.join(__dirname, 'public')));

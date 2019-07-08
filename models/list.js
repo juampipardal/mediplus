@@ -28,7 +28,7 @@ module.exports.addList = (newList, callback) => {
     newList.save(callback);
 }
 
-//Here we need to pass an id parameter to BUcketList.remove
+//Here we need to pass an id parameter to pacienteslist.remove
 module.exports.deleteListById = (id, callback) => {
     let query = {_id: id};
     pacientesList.remove(query, callback);

@@ -5,7 +5,7 @@ const pacientesList = require('../models/list');
 
 //GET HTTP method to /pacientes
 router.get('/',(req,res) => {
-    pacientesList.getAllLists((err, list) => {
+    pacientesList.getAllLists((err, lists) => {
         if (err) {
             res.json({success: false, message: `Failed to load all lists. Error: ${err}`});
         } else {
@@ -18,12 +18,12 @@ router.get('/',(req,res) => {
 //POST HTTP method to /pacientes
 
 router.post('/', (req,res,next) => {
-        let newList = new newPacientesList({
+        let newList = new pacientesList({
             name: req.body.name,
             surname: req.body.surname,
             gender: req.body.gender
         });
-        pacientesList.addList(newPacientesList, (err, list) => {
+        pacientesList.addList(newList, (err, list) => {
             if (err) {
                 res.json({success: false, message: `failed to create a new list. Error: ${err}`})
             } else {
