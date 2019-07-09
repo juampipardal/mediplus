@@ -21,9 +21,20 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-// controllers
+
+// -------START CONTROLLERS---------------
 const pacientes = require('./controllers/pacientes');
 app.use('/pacientes', pacientes);
+
+const doctors = require('./controllers/doctors');
+app.use('/doctors', doctors);
+
+const appointments = require('./controllers/appointments');
+app.use('/appointments', appointments);
+
+// -------END CONTROLLERS-----------------
+
+
 
 // de aca levantamos el front ya buildeado
 app.use(express.static(path.join(__dirname, 'public')));

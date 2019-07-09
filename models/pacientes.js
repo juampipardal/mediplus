@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const pacienteSchema = mongoose.Schema({
+    dni: {
+        type: Number,
+        required: true,
+        unique: true
+    },
     name: {
         type: String,
         required: true
@@ -13,6 +18,9 @@ const pacienteSchema = mongoose.Schema({
         type: String,
         required: true,
         enum: ['Hombre', 'Mujer', 'Otro']
+    },
+    requieredAppointments: {
+        type: [mongoose.Schema.Types.ObjectId]
     }
 });
 
@@ -32,4 +40,9 @@ module.exports.addList = (newList, callback) => {
 module.exports.deleteListById = (id, callback) => {
     let query = {_id: id};
     pacientesList.remove(query, callback);
+}
+
+module.exports.requestedAppointments = (patientId, appointmentId, callback) => {
+    let query = {_id: patientId};
+    pacientesList.update(query, {$push: {requieredAppointments: appointmentId}}, callback);
 }
