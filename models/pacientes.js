@@ -45,4 +45,4 @@ module.exports.deleteListById = (id, callback) => {
 module.exports.requestedAppointments = (patientId, appointmentId, callback) => {
     let query = {_id: patientId};
     pacientesList.update(query, {$push: {requieredAppointments: appointmentId}}, callback);
-}
+} 
