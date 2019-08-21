@@ -12,6 +12,7 @@ import { reducers } from './containers/reducers/';
 import { PatientHomePageComponent } from './components/patient-home-page/patient-home-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PatientRequestAppointmentsComponent } from './components/patient-request-appointments/patient-request-appointments.component';
+import bootstrap from 'bootstrap';
 
 @NgModule({
   declarations: [
