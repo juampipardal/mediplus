@@ -32,6 +32,8 @@ app.use('/doctors', doctors);
 const appointments = require('./controllers/appointments');
 app.use('/appointments', appointments);
 
+const healthcare = require('./controllers/healthcare');
+app.use('/healthcare', healthcare);
 // -------END CONTROLLERS-----------------
 
 
