@@ -13,6 +13,7 @@ import { PatientHomePageComponent } from './components/patient-home-page/patient
 import { HeaderComponent } from './components/header/header.component';
 import { PatientRequestAppointmentsComponent } from './components/patient-request-appointments/patient-request-appointments.component';
 import bootstrap from 'bootstrap';
+import { PatientSelectSpecialistComponent } from './components/patient-select-specialist/patient-select-specialist.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import bootstrap from 'bootstrap';
     PatientPageComponent,
     PatientHomePageComponent,
     HeaderComponent,
-    PatientRequestAppointmentsComponent
+    PatientRequestAppointmentsComponent,
+    PatientSelectSpecialistComponent
   ],
   imports: [
     BrowserModule,

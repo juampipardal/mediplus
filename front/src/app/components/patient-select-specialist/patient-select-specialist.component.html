@@ -1,0 +1,11 @@
+<span (click)="goToHome()" class="back-label">Volver al inicio</span>
+<h3 class="white-text">Primero selecciona la especialidad buscada</h3>
+<div class="buttons-container">
+    <div *ngFor="let specialist of specialistArray">
+      <div class="home-button">
+        <span class="button-content">
+            {{specialist}}
+        </span>
+      </div>
+    </div>
+</div>
