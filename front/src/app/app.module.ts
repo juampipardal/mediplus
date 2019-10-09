@@ -17,6 +17,9 @@ import { PatientSelectSpecialistComponent } from './components/patient-select-sp
 
 import {HttpClientModule} from '@angular/common/http';
 import { DoctorFilteredComponent } from './components/doctor-filtered/doctor-filtered.component';
+import { AppointmentRequestComponent } from './components/appointment-request/appointment-request.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -27,14 +30,17 @@ import { DoctorFilteredComponent } from './components/doctor-filtered/doctor-fil
     HeaderComponent,
     PatientRequestAppointmentsComponent,
     PatientSelectSpecialistComponent,
-    DoctorFilteredComponent
+    DoctorFilteredComponent,
+    AppointmentRequestComponent
   ],
   imports: [
     BrowserModule,
     StoreModule.forRoot({}),
     StoreModule.forFeature('patientView', reducers),
     EffectsModule.forRoot([]),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [],
