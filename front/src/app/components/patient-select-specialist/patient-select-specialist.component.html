@@ -3,9 +3,18 @@
 <div class="buttons-container">
     <div *ngFor="let specialist of specialistArray">
       <div class="home-button">
-        <span class="button-content">
+        <span class="button-content" (click)="onSelectedSpecialist(specialist)">
             {{specialist}}
         </span>
       </div>
     </div>
+</div>
+<div class="specialist-selected" *ngIf="specialistSelected!='' ">
+  <span>
+    Estos son nuestros especialistas {{this.specialistSelected}}
+  </span>
+
+  <div *ngFor="let doctor of (doctorsBySpecialist | async)?.lists">
+    <app-doctor-filtered [doctor]="doctor"></app-doctor-filtered>
+  </div>
 </div>

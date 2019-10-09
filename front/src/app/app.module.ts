@@ -15,6 +15,10 @@ import { PatientRequestAppointmentsComponent } from './components/patient-reques
 import bootstrap from 'bootstrap';
 import { PatientSelectSpecialistComponent } from './components/patient-select-specialist/patient-select-specialist.component';
 
+import {HttpClientModule} from '@angular/common/http';
+import { DoctorFilteredComponent } from './components/doctor-filtered/doctor-filtered.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,12 +26,15 @@ import { PatientSelectSpecialistComponent } from './components/patient-select-sp
     PatientHomePageComponent,
     HeaderComponent,
     PatientRequestAppointmentsComponent,
-    PatientSelectSpecialistComponent
+    PatientSelectSpecialistComponent,
+    DoctorFilteredComponent
   ],
   imports: [
     BrowserModule,
     StoreModule.forRoot({}),
-    StoreModule.forFeature('patientView', reducers)
+    StoreModule.forFeature('patientView', reducers),
+    EffectsModule.forRoot([]),
+    HttpClientModule
 
   ],
   providers: [],
